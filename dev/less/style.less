@@ -1,0 +1,64 @@
+@import "mq-bootstrap.less";
+@import "mixins.less";
+@import "elements.less";
+
+body {
+	font-size: 16px;
+}
+
+textarea {
+	height: 250px;
+	font-size: 0.8em;
+}
+
+.main-header {
+	border-bottom: 10px solid #ddd;
+	background-color: #333;
+	color: white;
+	.box-shadow(0 0 10px 0 #333);
+
+	.title {
+		text-shadow: 1px 1px 1px #000;
+	}
+}
+
+.content-wrapper {
+}
+
+.content {
+	.mq-col(70%);
+}
+
+.sidebar {
+	.mq-col(30%);
+
+	.inner {
+		padding: 0 15px 15px 15px;
+		border-bottom: 1px solid #f0f0f0;
+		background: #eee;
+		color: #111;
+		.box-shadow(0 10px 10px -10px #666);
+	}
+}
+
+.mq-row {
+	.mq-row();
+}
+
+.form-actions {
+	background-color: transparent;
+	text-align: right;
+}
+
+.main-footer {
+	.box-shadow(0 0 10px 0 #333);
+	height: 80px;
+	border-top: 10px solid #ddd;
+	background-color: #333;
+	color: white;
+	margin-top: 30px;
+}
+
+label {
+	margin-left: 30px;
+}

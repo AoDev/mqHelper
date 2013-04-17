@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>
+	</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header class="main-header">
+		<div class="container">
+			<h1 class="title"> MediaQueryHelper </h1>
+		</div>
+	</header>
+
+	<div class="content-wrapper container">
+		<div class="mq-row">
+			<div class="content">
+				<div>
+					<form id="options">
+						<h3>Options</h3>
+						<label for="normal">
+							<input id="normal" name="normal" type="checkbox" checked="checked">
+							Code + grouped media queries
+						</label>
+						<fieldset>
+							<legend>separated results</legend>
+							<label for="stripped">
+								<input id="stripped" name="stripped" type="checkbox">
+								Display css without media queries
+							</label>
+							<label for="groups">
+								<input id="groups" name="groups" type="checkbox">
+								Display each grouped mqs rule
+							</label>
+						</fieldset>
+						<fieldset>
+							<legend>result options</legend>
+							<label for="mqbottom">
+								<input id="mqbottom" type="radio" name="mqposition" value="bottom" checked="checked">
+								Group mqs and put them at bottom
+							</label>
+							<label for="mqtop">
+								<input id="mqtop" type="radio" name="mqposition" value="top">
+								Group mqs and put them at top
+							</label>
+						</fieldset>
+					</form>
+				</div>
+				<div>
+					<h2>
+						Past your code here <small>or parse this example</small>
+					</h2>
+					<form id="test-form">
+						<textarea id="textarea-source-code" name="textarea-source-code">
+						</textarea>
+						<div class="form-actions">
+							<input class="btn btn-primary" type="submit" value="Parse!" />
+						</div>
+					</form>
+				</div>
+
+				<div>
+					<div id="results-container">
+
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar">
+				<div class="inner">
+					<h3>
+						Why?
+					</h3>
+					<p>
+						You are writing media queries just after the element your are styling
+						because it's easier to develop and maintain. But this isn't good for production.
+					</p>
+					<p>
+						This little app will group all the media queries found in your code.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="main-footer">
+		<div class="container">
+			<p>
+				Any comment, mail to kevin.purnelle @ g m a i l . c o m
+			</p>
+		</div>
+	</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script> window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+	<script src="js/libs/jquery-1.7.2.min.js"></script>
+	<script src="js/mqhelper.js"></script>
+</body>
+
+</html>
