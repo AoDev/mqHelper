@@ -1981,6 +1981,9 @@ textarea {
   height: 250px;
   font-size: 0.8em;
 }
+label {
+  margin-left: 30px;
+}
 .main-header {
   border-bottom: 10px solid #ddd;
   background-color: #333;
@@ -2019,15 +2022,16 @@ textarea {
   text-align: right;
 }
 .main-footer {
-  -webkit-box-shadow: 0 0 10px 0 #333333;
-  -moz-box-shadow: 0 0 10px 0 #333333;
-  box-shadow: 0 0 10px 0 #333333;
-  height: 80px;
+  height: 60px;
   border-top: 10px solid #ddd;
   background-color: #333;
   color: white;
   margin-top: 30px;
+  -webkit-box-shadow: 0 0 10px 0 #333333;
+  -moz-box-shadow: 0 0 10px 0 #333333;
+  box-shadow: 0 0 10px 0 #333333;
 }
-label {
-  margin-left: 30px;
+.main-footer .txt {
+  padding: 5px;
+  text-align: center;
 }
