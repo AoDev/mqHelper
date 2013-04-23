@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>
+		Media Query Helper - group your media queries
 	</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -78,7 +79,7 @@
 					<h3> Why? </h3>
 					<p>
 						You are writing media queries just after the element your are styling
-						because it's easier to develop and maintain. But this isn't good for production.
+						because it's easier to develop and maintain. But this isn't the best for production.
 					</p>
 					<p>
 						This little app will group all the media queries found in your code.
@@ -90,6 +91,12 @@
 					<h3> Contact </h3>
 					<p>
 						kevin [dot] purnelle [at] gmail [dot] com
+					</p>
+
+					<h3> Share</h3>
+					<div class="fb-like" data-send="true" data-width="225" data-show-faces="false"></div>
+					<p>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="kevinpur">Tweet</a>
 					</p>
 				</div>
 			</div>
@@ -103,6 +110,18 @@
 			</p>
 		</div>
 	</footer>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script> window.jQuery || document.write('<script src="/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
