@@ -2017,6 +2017,16 @@ label {
   -moz-box-shadow: 0 10px 10px -10px #666666;
   box-shadow: 0 10px 10px -10px #666666;
 }
+.sidebar .h2 {
+  font-size: 1.6em;
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 1.2;
+}
+.sidebar .h3 {
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 1.2;
+}
 .mq-row {
   margin: 0 -15px;
 }
