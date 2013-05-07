@@ -33,7 +33,7 @@ var MqHelper = (function () {
 		grouped_queries = groupQueries(matches);
 
 		return {
-			mqs : grouped_queries,
+			mqs: grouped_queries,
 			stripped: stripped
 		}
 	}
