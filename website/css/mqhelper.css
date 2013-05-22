@@ -1974,19 +1974,33 @@ fieldset[disabled] .btn-link:focus {
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  height: 100%;
+  padding-bottom: 90px;
   font-size: 16px;
 }
 textarea {
   height: 250px;
   font-size: 0.8em;
 }
-label {
-  margin-left: 30px;
+legend {
+  margin: 20px 0;
+}
+legend small {
+  color: #555;
+  font-size: 0.75em;
 }
 .container {
   padding: 0 15px;
 }
+.form-options {
+  margin-top: 30px;
+}
+/* --------------------------------------------- */
 .main-header {
   border-bottom: 10px solid #ddd;
   background-color: #333;
@@ -1995,37 +2009,81 @@ label {
   -moz-box-shadow: 0 0 10px 0 #333333;
   box-shadow: 0 0 10px 0 #333333;
 }
-.main-header .title {
-  text-shadow: 1px 1px 1px #000;
+.main-header:before,
+.main-header:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
 }
+.main-header:after {
+  clear: both;
+}
+.main-header:before,
+.main-header:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.main-header:after {
+  clear: both;
+}
+.main-header .title {
+  float: left;
+  text-shadow: 1px 1px 1px #666;
+}
+.main-header .btn {
+  float: right;
+  margin-top: 10px;
+  margin-left: 30px;
+  text-shadow: 1px 1px 1px #222;
+  font-size: 1.2em;
+}
+/* --------------------------------------------- */
 .content {
   float: left;
   padding: 0 15px;
   width: 70%;
 }
+.process-options {
+  overflow: hidden;
+}
+.process-options label {
+  margin-left: 30px;
+}
+/* --------------------------------------------- */
 .sidebar {
+  position: relative;
+  top: -10px;
   float: left;
   padding: 0 15px;
   width: 30%;
 }
 .sidebar .inner {
-  padding: 0 15px 15px 15px;
+  padding: 15px;
+  border-top: 10px solid #e4e4e4;
   border-bottom: 1px solid #f0f0f0;
   background: #eee;
   color: #111;
-  -webkit-box-shadow: 0 10px 10px -10px #666666;
-  -moz-box-shadow: 0 10px 10px -10px #666666;
-  box-shadow: 0 10px 10px -10px #666666;
+  -webkit-box-shadow: 0 2px 10px 0px #999999;
+  -moz-box-shadow: 0 2px 10px 0px #999999;
+  box-shadow: 0 2px 10px 0px #999999;
+}
+.sidebar .h2,
+.sidebar .h3 {
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 1.2;
 }
 .sidebar .h2 {
   font-size: 1.6em;
-  text-shadow: 1px 1px 1px #fff;
-  line-height: 1.2;
 }
 .sidebar .h3 {
   font-size: 1.2em;
-  text-shadow: 1px 1px 1px #fff;
-  line-height: 1.2;
 }
 .mq-row {
   margin: 0 -15px;
@@ -2034,12 +2092,16 @@ label {
   background-color: transparent;
   text-align: right;
 }
+/* --------------------------------------------- */
 .main-footer {
+  position: absolute;
+  bottom: 0;
   height: 60px;
+  width: 100%;
+  margin-top: 30px;
   border-top: 10px solid #ddd;
   background-color: #333;
   color: white;
-  margin-top: 30px;
   -webkit-box-shadow: 0 0 10px 0 #333333;
   -moz-box-shadow: 0 0 10px 0 #333333;
   box-shadow: 0 0 10px 0 #333333;
@@ -2047,4 +2109,24 @@ label {
 .main-footer .txt {
   padding: 5px;
   text-align: center;
+}
+/* --------------------------------------------- */
+.stats-wrapper {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 320px;
+  border: 10px solid #ECF3FF;
+  background-color: #9DDCFF;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px 0 #92a9cc;
+  -moz-box-shadow: 0 0 15px 0 #92a9cc;
+  box-shadow: 0 0 15px 0 #92a9cc;
+}
+.stats-wrapper .title {
+  margin-top: 15px;
+  padding-left: 24px;
+  background: #D9F0FC;
 }

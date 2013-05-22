@@ -2,7 +2,14 @@
 @import "mixins.less";
 @import "elements.less";
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
+	height: 100%;
+	padding-bottom: 90px;
 	font-size: 16px;
 }
 
@@ -11,54 +18,89 @@ textarea {
 	font-size: 0.8em;
 }
 
-label {
-	margin-left: 30px;
+legend {
+	margin: 20px 0;
+
+	small {
+		color: #555;
+		font-size: 0.75em;
+	}
 }
-
-
 
 .container {
 	padding: 0 15px;
 }
 
+.form-options {
+	margin-top: 30px;
+}
+
+// Header
+/* --------------------------------------------- */
 .main-header {
 	border-bottom: 10px solid #ddd;
 	background-color: #333;
 	color: white;
 	.box-shadow(0 0 10px 0 #333);
+	.clearfix();
 
 	.title {
-		text-shadow: 1px 1px 1px #000;
+		float: left;
+		text-shadow: 1px 1px 1px #666;
+	}
+
+	.btn {
+		float: right;
+		margin-top: 10px;
+		margin-left: 30px;
+		text-shadow: 1px 1px 1px #222;
+		font-size: 1.2em;
 	}
 }
 
+// Main content
+/* --------------------------------------------- */
 .content {
 	.mq-col(70%);
 }
 
+.process-options {
+
+	overflow: hidden;
+
+	label {
+		margin-left: 30px;
+	}
+}
+
+// Sidebar
+/* --------------------------------------------- */
 .sidebar {
+	position: relative;
+	top: -10px;
 	.mq-col(30%);
 
 	.inner {
-		padding: 0 15px 15px 15px;
+		padding: 15px;
+		border-top: 10px solid #e4e4e4;
 		border-bottom: 1px solid #f0f0f0;
 		background: #eee;
 		color: #111;
-		.box-shadow(0 10px 10px -10px #666);
+		.box-shadow(0 2px 10px 0px #999);
+	}
+
+	.h2, .h3 {
+		text-shadow: 1px 1px 1px #fff;
+		line-height: 1.2;
 	}
 
 	.h2 {
 		font-size: 1.6em;
-		text-shadow: 1px 1px 1px #fff;
-		line-height: 1.2;
 	}
 
 	.h3 {
 		font-size: 1.2em;
-		text-shadow: 1px 1px 1px #fff;
-		line-height: 1.2;
 	}
-
 }
 
 .mq-row {
@@ -70,17 +112,42 @@ label {
 	text-align: right;
 }
 
+// Footer
+/* --------------------------------------------- */
 .main-footer {
+	position: absolute;
+	bottom: 0;
 	height: 60px;
+	width: 100%;
+	margin-top: 30px;
 	border-top: 10px solid #ddd;
 	background-color: #333;
 	color: white;
-	margin-top: 30px;
 	.box-shadow(0 0 10px 0 #333);
 
 	.txt {
 		padding: 5px;
 		text-align: center;
+	}
+}
+
+// Stats
+/* --------------------------------------------- */
+
+.stats-wrapper {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	width: 320px;
+	border: 10px solid #ECF3FF;
+	background-color: #9DDCFF;
+	.rounded(5px);
+	.box-shadow(0 0 15px 0 #92A9CC);
+
+	.title {
+		margin-top: 15px;
+		padding-left: 24px;
+		background: #D9F0FC;
 	}
 }
 

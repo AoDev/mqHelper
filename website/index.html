@@ -17,19 +17,26 @@
 	<header class="main-header">
 		<div class="container">
 			<h1 class="title"> MediaQueryHelper </h1>
+			<button id="btn-toggle-options" class="btn">Show more options  <br>
+				<small>Minify, display individual results</small>
+			</button>
 		</div>
 	</header>
 
 	<div class="content-wrapper container">
 		<div class="mq-row">
 			<div class="content">
-				<div>
-					<form id="options">
+				<form id="mqh-form" class="form-options">
+
+					<label for="normal">
+						Normal result: <input id="normal" name="normal" type="checkbox" checked="checked">
+						Code + grouped media queries
+					</label>
+					<br>
+
+					<div id="processOptions" class="process-options">
+
 						<h3>Options</h3>
-						<label for="normal">
-							<input id="normal" name="normal" type="checkbox" checked="checked">
-							Code + grouped media queries
-						</label>
 						<fieldset>
 							<legend>separated results</legend>
 							<label for="stripped">
@@ -41,35 +48,40 @@
 								Display each grouped mqs rule
 							</label>
 						</fieldset>
+
 						<fieldset>
-							<legend>result options</legend>
-							<label for="mqbottom">
-								<input id="mqbottom" type="radio" name="mqposition" value="bottom" checked="checked">
-								Group mqs and put them at bottom
+							<legend>minify css <small>(Basic must be checked to enable the other options)</small></legend>
+
+							<label for="invisiblesAndComments">
+								<input id="invisiblesAndComments" type="checkbox" name="invisiblesAndComments">
+								Basic: Unnecessary comments, spaces, tabs, line breaks and semicolons
 							</label>
-							<label for="mqtop">
-								<input id="mqtop" type="radio" name="mqposition" value="top">
-								Group mqs and put them at top
+							<label for="zeros">
+								<input id="zeros" type="checkbox" name="zeros">
+								Remove leading zeros and units after 0 <small>(example: 0.25 → .25, 0px → 0)</small>
 							</label>
-							<label for="minify">
-								<input id="minify" type="checkbox" name="minify">
-								Minify the css with <a href="http://cssminifier.com/">cssminifier</a>
+							<label for="rgbcolors">
+								<input id="rgbcolors" type="checkbox" name="rgbcolors">
+								Convert rgb colors in hexadecimal, minify hex
+							</label>
+							<label for="oldIeCompatibility">
+								<input id="oldIeCompatibility" type="checkbox" name="oldIeCompatibility">
+								Old IE compatibility <small>(add spaces after closing parenthesis)</small>
 							</label>
 						</fieldset>
-					</form>
-				</div>
-				<div>
-					<h2>
-						Past your code here <small>or parse this example</small>
-					</h2>
-					<form id="test-form">
+					</div>
+
+					<div>
+						<h2>
+							Past your code here <small>or parse this example</small>
+						</h2>
 						<textarea id="textarea-source-code" name="textarea-source-code">
 						</textarea>
 						<div class="form-actions">
 							<input class="btn btn-primary" type="submit" value="Parse!" />
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 
 				<div>
 					<div id="results-container">
@@ -77,7 +89,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="sidebar">
 				<div class="inner">
 					<h2 class="h2"> What is mqHelper?</h2>
@@ -93,6 +104,11 @@
 
 					<h3 class="h3"> Sources </h3>
 					<p>github: <a href="https://github.com/AoDev/mqHelper">mqhelper on github</a></p>
+
+					<h3 class="h3"> Credits time</h3>
+					<p>
+						I use <a href="https://github.com/xem/miniMinifier" title="go to xem github">Maxime Euzière's work</a>. Thanks :)
+					</p>
 
 					<h3 class="h3"> Contact </h3>
 					<p>
@@ -131,6 +147,7 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script> window.jQuery || document.write('<script src="/js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/libs/xem-minifier.min.js"></script>
 	<script src="/js/mqhelper.min.js"></script>
 	<script src="/js/app.min.js"></script>
 </body>
