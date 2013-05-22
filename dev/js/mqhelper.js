@@ -1,6 +1,10 @@
-/* Author: Kevin Purnelle
-
-*/
+/* --------------------------------------------------------------
+* Media Query Helper (mqHelper)
+*
+* Author: Kevin Purnelle
+* Source at: https://github.com/AoDev/mqHelper
+*
+* ------------------------------------------------------------- */
 
 var MqHelper = (function () {
 
