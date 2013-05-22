@@ -101,9 +101,9 @@ var App = (function ($) {
 	app.processCss = function processCss(event) {
 		event.preventDefault()
 		app.results = MqHelper.process(app.$.source.val())
-		if (app.options.minify.basic) {
-			app.results.fullCss = XemMinifier.process(app.results.fullCss, app.options.minify)
-		}
+		// if (app.options.minify.basic) {
+		// 	app.results.fullCss = XemMinifier.process(app.results.fullCss, app.options.minify)
+		// }
 		app.$.resultsWrapper.html(app.resultToHtml(app.results))
 		app.getAndDisplayStats()
 
