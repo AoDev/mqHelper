@@ -8,6 +8,16 @@ var MqHelper = (function () {
 
 	var mqRegex = new RegExp(/(@media[^\{]*)\{(([^\{\}]*\{[^\{\}]*\})*)[^\}]*\}/gi);
 	var mqh = {};
+	var stats = {
+		mqFound : 0,
+		mqDefrag : 0
+	};
+	var results = {
+		mqs: null,
+		stripped: null,
+		fullCss: null,
+		stats: stats
+	};
 
 	/* Process the css source
 	--------------------------------------------------------------- */
@@ -15,27 +25,47 @@ var MqHelper = (function () {
 
 		var curr_match;
 		var matches = [];
-		var grouped_queries;
-		var stripped = "";
-		var mqs = {}
+
+		//reset
+		stats.mqFound = 0
+		stats.mqDefrag = 0
 
 		//get the code stripped from the media queries
-		stripped = css.replace(mqRegex, '').trim()
+		results.stripped = css.replace(mqRegex, '').trim()
 
 		//get and group media queries
 		while (curr_match = mqRegex.exec(css)) {
 
-			curr_match[1] = normalizeQuery(curr_match[1]);
-			matches.push([curr_match[1],curr_match[2]]);
+			curr_match[1] = normalizeQuery(curr_match[1])
+			matches.push([curr_match[1],curr_match[2]])
+			stats.mqFound++
 		}
 
-		matches.sort(compareQueries);
-		grouped_queries = groupQueries(matches);
+		matches.sort(compareQueries)
+		results.mqs = groupQueries(matches)
+		results.fullCss = buildCss()
+		stats.mqDefrag = results.mqs.length
 
-		return {
-			mqs: grouped_queries,
-			stripped: stripped
+		return results
+	}
+
+
+	/* return the css code built from separated results
+	--------------------------------------------------------------- */
+	function buildCss() {
+
+		var ordered = "";
+
+		if (results.mqs !== null) {
+
+			for (var i = 0, len = results.mqs.length ; i < len ; i++) {
+
+				ordered += results.mqs[i].query + " {\n"
+				ordered += results.mqs[i].rules + "\n}\n"
+			}
 		}
+
+		return (results.stripped + "\n" + ordered)
 	}
 
 
@@ -68,31 +98,31 @@ var MqHelper = (function () {
 
 		if (arr.length > 0) {
 
-			curr_mediaquery.query = arr[0][0];
-			curr_mediaquery.rules = "";
+			curr_mediaquery.query = arr[0][0]
+			curr_mediaquery.rules = ""
 
 			for (var i = 0, len = arr.length; i < len; i++) {
 
 				if (arr[i][0] === curr_mediaquery.query) {
 
-					curr_mediaquery.rules += arr[i][1];
+					curr_mediaquery.rules += arr[i][1]
 				}
 				else {
 
-					result.push(jQuery.extend({},curr_mediaquery));
-					curr_mediaquery.query = arr[i][0];
-					curr_mediaquery.rules = arr[i][1];
+					result.push(jQuery.extend({},curr_mediaquery))
+					curr_mediaquery.query = arr[i][0]
+					curr_mediaquery.rules = arr[i][1]
 				}
 			}
-			result.push(curr_mediaquery);
+			result.push(curr_mediaquery)
 			//the last media-query needs to be pushed after the loop
 		}
 		else {
 
-			result = null;
+			result = null
 		}
 
-		return result;
+		return result
 	}
 
 	// return our mqhelper module
