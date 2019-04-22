@@ -1,10 +1,9 @@
 mqHelper
 ========
 
-Group media queries that have the same declaration without altering the meaning of the css.
+UNMAINTAINED (just keeping it for posterity ;))
 
-Try it online:
-Website: http://mqhelper.nokturnalapp.com
+Group media queries that have the same declaration without altering the meaning of the css.
 
 Goal:
 -----
@@ -37,22 +36,3 @@ var results = {
 
 results.mqs is an array of js objects that contains the individual media queries declaration with the corresponding css rules.
 
-
-Status:
--------
-
-* Works well, let me know if you see any issue.
-
-
-Future:
--------
-* Would like to add some minification option to the website.
-* If you want to contribute, it would be nice to have the algorithm translated to other languages.
-* So it could be part of a production script.
-
-
-Sources:
---------
-
-* dev folder contains the sources of the mqhelper script and the website
-* website folder is what is here: http://mqhelper.nokturnalapp.com
